@@ -22,3 +22,7 @@ clicking on "Link names to control injections" and indicating the text of the li
 You can install a DVWA image or simply run it in a docker: <strong>docker run -d --rm -it -p 80:80 vulnerable/web-dvwa</strong> or enter one that is already running at http://docker.anonvpn.es/ . You can try this application at http://docker.anonvpn.es:8000. This is a Docker application that is running.
 
 <h2>Architecture</h2>
+
+The app is made with django. The app uses Selenium to track the target site. Once downloaded the page uses "BeautifulSoup" as a parser and and adapts all addresses of the style files, images, etc. remotely accessed. The local links are preserved as they are because it will use them to access other parts of the remote server from django.
+
+With BeautifulSoup it reads all the forms and replaces them with  django forms that will use for analyzing if there has been an attempt to inject malicious code. The app uses the django admin site for storing local data in a postgresql database.
