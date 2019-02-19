@@ -10,7 +10,7 @@ This app is developed with django and uses postgresql as database. You can insta
   3.3 <strong>docker-compose run --rm appcheck /bin/bash -c "cd appcheck; ./manage.py migrate"</strong><br>
 4) Create super-user: <strong>docker-compose run --rm appcheck /bin/bash -c "cd appcheck; ./manage.py createsuperuser"</strong><br>
 
-Now you can start the app with docker: <strong>docker-compose up</strong>
+Now you can start the app with docker: <strong>docker-compose up</strong> and access to the app on port 8000
 
 <h2>Configuration</h2>
 This application carwls a target site, so it is necessary to indicate the address of the site. You can configure several sites, but only one of them will be active. To do this, log in as super-user at http://your-url/admin . After this, under "CRAWLER" click on 
