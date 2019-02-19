@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  appcheck:
+    ports:
+      - "0.0.0.0:8000:8000"
+    build: .
+    command: python appcheck/manage.py runserver 0.0.0.0:8000
+    env_file:
+      - config/db/database_env
+    environment:
+      - DB_HOST=database
+    volumes:
+      - .:/opt/services/appcheck/src
+      - static_volume:/opt/services/appcheck/static 
+      - media_volume:/opt/services/appcheck/media  
+    networks:
+      - database_network
+    depends_on:
+      - database
+
+  database:
+    image: postgres:11
+    env_file: 
+      - config/db/database_env
+    networks:
+      - database_network
+    volumes:
+      - database_volume:/var/lib/postgresql/data
+
+networks:
+  database_network:
+    driver: bridge
+
+volumes:
+  database_volume:
+  static_volume:  
+  media_volume: 
