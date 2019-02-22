@@ -19,7 +19,7 @@ This application carwls a target site, so it is necessary to indicate the addres
 The application crawls the entire site. To detect injection code attempts, you must indicate the link to crawl. You can indicate it
 clicking on "Link names to control injections" and indicating the text of the link ("SQL Injection" for this exercise, but you can enter any of the active links).<br><br>
 
-You can install a DVWA image or simply run it in a docker: <strong>docker run -d --rm -it -p 80:80 vulnerable/web-dvwa</strong> or enter one that is already running at http://docker.anonvpn.es/ . You can try this application at http://docker.anonvpn.es:8000. This is a Docker application that is running.
+You can install a DVWA image or simply run it in a docker: <strong>docker run -d --rm -it -p 80:80 vulnerable/web-dvwa</strong>
 
 <h2>Architecture</h2>
 
